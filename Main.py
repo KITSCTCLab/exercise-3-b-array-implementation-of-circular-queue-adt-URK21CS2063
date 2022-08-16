@@ -1,5 +1,5 @@
 class MyCircularQueue:
-   def __init__(self, size: int):
+  def __init__(self, size: int):
      self.size=size
      self.queue=[None]*size
      self.rear=-1
@@ -27,20 +27,20 @@ class MyCircularQueue:
        return True
  else:
     return False
- def get_front(self) -> int:
- if(self.is_empty()==False):
- return self.queue[self.front]
- else:
- return -1
- def get_rear(self):
- if(self.is_empty()==False):
- return self.queue[self.rear]
- else:
- return -1
- def is_empty(self):
- return self.front==-1
- def is_full(self):
- return (self.rear+1)%self.size==self.front
+  def get_front(self) -> int:
+    if(self.is_empty()==False):
+      return self.queue[self.front]
+  else:
+      return -1
+  def get_rear(self):
+    if(self.is_empty()==False):
+       return self.queue[self.rear]
+    else:
+       return -1
+  def is_empty(self):
+     return self.front==-1
+  def is_full(self):
+     return (self.rear+1)%self.size==self.front
 
 # Do not change the following code
 operations = []
