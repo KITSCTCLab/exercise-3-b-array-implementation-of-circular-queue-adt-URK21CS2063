@@ -4,43 +4,43 @@ class MyCircularQueue:
         self.queue=[None]*size
         self.rear=-1
         self.front=-1
- def enqueue(self, value: int) -> bool:
-     if(self.is_full()==False):
-      if(self.front==-1):
-         self.front=0
-         self.rear=0
-         self.queue[self.rear]=value
-      else:
-        self.rear=(self.rear+1)%self.size
-        self.queue[self.rear]=value
-     return True
+    def enqueue(self, value: int) -> bool:
+       if(self.is_full()==False):
+        if(self.front==-1):
+           self.front=0
+           self.rear=0
+           self.queue[self.rear]=value
+        else:
+          self.rear=(self.rear+1)%self.size
+          self.queue[self.rear]=value
+       return True
+       else:
+          return False
+    def dequeue(self) -> bool:
+       if(self.is_empty()==False):
+        if(self.front==self.rear):
+          self.front=-1
+          self.rear=-1
+          return True
      else:
-        return False
-  def dequeue(self) -> bool:
-     if(self.is_empty()==False):
-      if(self.front==self.rear):
-        self.front=-1
-        self.rear=-1
-        return True
-   else:
-     self.front=(self.front+1)%self.size
-     return True
-   else:
-     return False
-  def get_front(self) -> int:
-    if(self.is_empty()==False):
-       return self.queue[self.front]
-   else:
+       self.front=(self.front+1)%self.size
+       return True
+     else:
+       return False
+    def get_front(self) -> int:
+      if(self.is_empty()==False):
+         return self.queue[self.front]
+     else:
+          return -1
+    def get_rear(self):
+      if(self.is_empty()==False):
+         return self.queue[self.rear]
+      else:
         return -1
-  def get_rear(self):
-    if(self.is_empty()==False):
-       return self.queue[self.rear]
-    else:
-      return -1
-  def is_empty(self):
-    return self.front==-1
-  def is_full(self):
-    return (self.rear+1)%self.size==self.front
+    def is_empty(self):
+      return self.front==-1
+    def is_full(self):
+      return (self.rear+1)%self.size==self.front
 
 
 # Do not change the following code
