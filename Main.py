@@ -14,8 +14,8 @@ class MyCircularQueue:
          self.rear=(self.rear+1)%self.size
          self.queue[self.rear]=value
        return True
-       else:
-         return False
+    else:
+       return False
   def dequeue(self) -> bool:
     if(self.is_empty()==False):
      if(self.front==self.rear):
@@ -26,15 +26,15 @@ class MyCircularQueue:
        self.front=(self.front+1)%self.size
        return True
  else:
-    return False
+       return False
   def get_front(self) -> int:
     if(self.is_empty()==False):
       return self.queue[self.front]
   else:
-      return -1
+     return -1
   def get_rear(self):
     if(self.is_empty()==False):
-       return self.queue[self.rear]
+      return self.queue[self.rear]
     else:
        return -1
   def is_empty(self):
